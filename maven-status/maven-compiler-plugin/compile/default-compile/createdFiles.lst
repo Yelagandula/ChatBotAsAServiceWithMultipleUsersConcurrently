@@ -1,0 +1,12 @@
+com\example\demo\DemoApplication.class
+com\example\demo\controllers\HomeController.class
+com\example\demo\config\AppConfig.class
+com\example\demo\controllers\ChatWebSocketController.class
+com\example\demo\controllers\ChatController.class
+com\example\demo\models\ChatMessage.class
+com\example\demo\config\SecurityConfig.class
+com\example\demo\config\CustomAuthSuccessHandler.class
+com\example\demo\config\WebSocketConfig.class
+com\example\demo\services\OpenAIService.class
+com\example\demo\models\ChatSession.class
+com\example\demo\repositories\ChatSessionRepository.class
