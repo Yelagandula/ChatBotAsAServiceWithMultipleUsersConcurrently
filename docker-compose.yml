@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: chatbot-db
+    restart: always
+    environment:
+      POSTGRES_DB: chatbotdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: aahpy4526a
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  chatbot-app:
+    build: .
+    container_name: chatbot-app
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/chatbotdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: aahpy4526a
+    ports:
+      - "8080:8080"
+
+volumes:
+  pgdata:
